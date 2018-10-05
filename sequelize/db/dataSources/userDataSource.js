@@ -10,11 +10,11 @@ module.exports = {
                     this.users = await UserDatabaseModel.findAll()
                     return this.users;
                 } catch (error) {
-                    console.log(error);
+                    return error;
                 }
             },
 
-            saveTicket: async function (user) {
+            saveUser: async function (user) {
                 try {
                     await UserDatabaseModel.create(user);
                     this.dataBaseResult = await UserDatabaseModel.findOrCreate({
@@ -27,7 +27,7 @@ module.exports = {
                     });
                     return this.user;
                 } catch (error) {
-                    console.log(error);
+                    return error;
                 }
             }
         }

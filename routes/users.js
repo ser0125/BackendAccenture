@@ -5,9 +5,11 @@ var router = express.Router();
 const User = require('../models/user');
 const UserRepository = require('../sequelize/db/repositories/userRepository');
 const UserDataSource = require('../sequelize/db/dataSources/userDataSource');
+var cors = require('cors');
 
 repository = new UserRepository(UserDataSource); 
 
+router.use(cors())
 
 /* GET users listing. */
 router.get('/', async function(req, res, next) {

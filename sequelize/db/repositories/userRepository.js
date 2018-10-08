@@ -13,7 +13,10 @@ class UserRepository {
     async saveUser(user) {
         const userSaved = await this._userDataSource.saveUser(user);
         return userSaved;
-    
+    }
+    async findUserByIdentification(identification) {
+        const user = await this._userDataSource.findUserByIdentification(identification);
+        return user;
     }
 }
 

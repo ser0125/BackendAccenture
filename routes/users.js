@@ -17,7 +17,14 @@ router.get('/', async function(req, res, next) {
   res.send(users);
 });
 
-/* POST save tickets . */
+/* GET users listing. */
+router.get('/:identification', async function(req, res, next) {
+  users = await repository.findUserByIdentification(req.params.identification);
+  res.send(users);
+});
+
+
+/* POST save user . */
 router.post('/', async function(req, res, next) {
   user = Object.assign(new User, req.body);
   userSaved = await repository.saveUser(user);

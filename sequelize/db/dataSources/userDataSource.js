@@ -13,6 +13,18 @@ module.exports = {
                     return error;
                 }
             },
+            findUserByIdentification: async function(identification) {
+                try {
+                    this.user = await UserDatabaseModel.findAll({
+                        where: {
+                            identification: identification
+                        }
+                    });
+                    return this.user;
+                } catch (error) {
+                    return(error);
+                }
+            },
 
             saveUser: async function (user) {
                 try {

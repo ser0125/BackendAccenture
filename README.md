@@ -23,7 +23,17 @@ Then with the console go to the folder of the project and run the next command
 npm install 
   ```
 
-#### Step 3. Serve the application
+#### Step 3. Create the local database
+
+After that you need to create the database with this settings:
+
+```
+"username": "root",
+"password": null,
+"database": "bank_system",
+```
+
+#### Step 4. Serve the application
 
 Finally the last step is to launch the server with this command.
 
